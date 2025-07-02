@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список фильмов</title>
+</head>
+<body>
+    <h1>Список фильмов</h1>
+    <a href="{% url 'add_film' %}">Добавить новый фильм</a>
+    <ul>
+        {% for film in films %}
+            <li>
+                <strong>{{ film.title }}</strong><br>
+                Описание: {{ film.description }}<br>
+                Отзыв: {{ film.review }}
+            </li>
+        {% empty %}
+            <li>Нет фильмов.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
